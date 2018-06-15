@@ -1,0 +1,28 @@
+{
+  "author": "quinton-ashley",
+  "bugs": {
+    "url": "https://github.com/quinton-ashley/get-open-apps/issues"
+  },
+  "dependencies": {
+    "ps-node": "^0.1.6"
+  },
+  "description": "Get a list of the apps the user has open.",
+  "homepage": "https://github.com/quinton-ashley/get-open-apps#readme",
+  "keywords": [
+    "pkg"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "get-open-apps",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinton-ashley/get-open-apps.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "first": "git add -A && git commit -m \"First commit\" && curl -u $npm_package_author https://api.github.com/$npm_package_author/$npm_package_name -d '{\"name\":$npm_package_name,\"description\":$npm_package_description}' && git remote add origin $npm_package_repository_url && git push -U origin master",
+    "version": "git add -A",
+    "postversion": "git remote | xargs -L1 git push --all && git push --tags && npm publish"
+  },
+  "version": "1.0.0"
+}
