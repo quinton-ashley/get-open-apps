@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "first": "git add -A && git commit -m \"First commit\" && curl -u $npm_package_author https://api.github.com/$npm_package_author/$npm_package_name -d '{\"name\":$npm_package_name,\"description\":$npm_package_description}' && git remote add origin $npm_package_repository_url && git push -U origin master",
+    "first": "git add -A && git commit -m $npm_package_version && A='{\"name\":\"'$npm_package_name'\",\"description\":\"'$npm_package_description'\",\"license_template\":\"'$npm_package_license'\"}' && echo \"${A}\" && curl -u $npm_package_author_name https://api.github.com/user/repos -d \"${A}\" && git remote add origin 'https://github.com/'$npm_package_author_name'/'$npm_package_name'.git' && git push --set-upstream origin master && git push && git push --tags",
     "version": "git add -A",
     "postversion": "git remote | xargs -L1 git push --all && git push --tags && npm publish"
   },
