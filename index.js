@@ -5,17 +5,13 @@ module.exports = async function(opt) {
   const {
     promisify
   } = require('util');
-  const ps = promisify(require('ps-node').lookup);
+  const spawn = require('await-spawn');
 
   let appsOpen = [];
-  let processes = await ps({
-    command: '',
-    arguments: ''
-  });
-  for (let i = 0; i < processes.length; i++) {
-    let process = processes[i].command;
-    let regex = /(?:\/Applications)(?:\/[^\/\.]*\/|\/)*(?:([^\.]+)\.app)/;
-    let app = process.match(regex);
+  let psOut = (await spawn('/bin/ps', ['-A'])).toString();
+  let regex = /(?:\/Applications)(?:\/[^\/\.]*\/|\/)*(?:([^\.]+)\.app)/gm;
+  let app;
+  while (app = regex.exec(psOut)) {
     if (app && !appsOpen[app[1]]) {
       appsOpen[app[1]] = app[0];
     }

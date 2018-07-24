@@ -4,7 +4,7 @@
     "url": "https://github.com/quinton-ashley/get-open-apps/issues"
   },
   "dependencies": {
-    "ps-node": "^0.1.6"
+    "await-spawn": "^2.1.1"
   },
   "description": "Get a list of the apps the user has open.",
   "homepage": "https://github.com/quinton-ashley/get-open-apps#readme",
@@ -20,9 +20,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "first": "O='{\"name\":\"'$npm_package_name'\",\"description\":\"'$npm_package_description'\",\"license_template\":\"'$npm_package_license'\"}' && echo \"${O}\" && curl -u $npm_package_author_name https://api.github.com/user/repos -d \"${A}\" && git add -A && git commit -m \"initial\" && git remote add origin 'https://github.com/'$npm_package_author_name'/'$npm_package_name'.git' && git merge origin/master --allow-unrelated-histories -m $npm_package_version && git push --set-upstream origin master && git push && git push --tags",
+    "premiere": "O='{\"name\":\"'$npm_package_name'\",\"description\":\"'$npm_package_description'\",\"license_template\":\"'$npm_package_license'\"}' && echo \"${O}\" && curl -u $npm_package_author_name https://api.github.com/user/repos -d \"${A}\" && git add -A && git commit -m \"initial\" && git remote add origin 'https://github.com/'$npm_package_author_name'/'$npm_package_name'.git' && git merge origin/master --allow-unrelated-histories -m $npm_package_version && git push --set-upstream origin master && git push && git push --tags",
     "version": "git add -A",
     "postversion": "git remote | xargs -L1 git push --all && git push --tags && npm publish"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
