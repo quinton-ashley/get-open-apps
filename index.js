@@ -8,7 +8,7 @@ module.exports = async function(opt) {
 	if (os.type() == 'Windows_NT') {
 		log('get-open-apps says hi to windows PC');
 		return {
-			Atom: path.join(os.homedir(), '/AppData/Local/atom')
+			Atom: path.join(os.homedir().replace(/\\/g, '/'), '/AppData/Local/atom')
 		};
 	}
 	const {
@@ -21,6 +21,7 @@ module.exports = async function(opt) {
 		command: '',
 		arguments: ''
 	});
+	log(processes);
 	for (let i = 0; i < processes.length; i++) {
 		let process = processes[i].command;
 		let regex = /(?:\/Applications)(?:\/[^\/\.]*\/|\/)*(?:([^\.]+)\.app)/;
