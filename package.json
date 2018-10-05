@@ -4,7 +4,7 @@
     "url": "https://github.com/quinton-ashley/get-open-apps/issues"
   },
   "dependencies": {
-    "ps-node": "^0.1.6"
+    "await-spawn": "^2.1.1"
   },
   "description": "Get a list of the apps the user has open.",
   "homepage": "https://github.com/quinton-ashley/get-open-apps#readme",
@@ -25,5 +25,5 @@
     "version": "git add -A",
     "postversion": "git remote | xargs -L1 git push --all && git push --tags && npm publish"
   },
-  "version": "1.0.3"
+  "version": "1.0.5"
 }
