@@ -6,7 +6,7 @@ module.exports = async function(opt) {
 	const path = require('path');
 	log(os.type());
 	if (os.type() == 'Windows_NT') {
-		log('get-open-apps says hi to windows PC');
+		log("get-open-apps doesn't work on windows yet");
 		return {
 			Atom: path.join(os.homedir().replace(/\\/g, '/'), '/AppData/Local/atom')
 		};
