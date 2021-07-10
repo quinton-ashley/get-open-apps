@@ -20,7 +20,7 @@ Returns an array like this:
 ]
 ```
 
-Doesn't work on Windows.
+Doesn't work on Windows!
 
 ### Tip me!
 
